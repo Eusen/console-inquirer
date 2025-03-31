@@ -1,7 +1,7 @@
 [project]
 name = "inquirer_console"
 
-version = "1.0.5"
+version = "1.0.6"
 
 description = "Elegant interactive command-line interface tool library, Python implementation of Inquirer.js"
 
