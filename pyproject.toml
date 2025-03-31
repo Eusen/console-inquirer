@@ -1,0 +1,46 @@
+[project]
+name = "inquirer_py"
+version = "0.1.0"
+description = "优雅的交互式命令行界面工具库，Inquirer.js的Python实现"
+readme = "README.md"
+requires-python = ">=3"
+license = { text = "MIT" }
+
+authors = [
+    { name = "Eusen", email = "179530591@qq.com" }
+]
+
+maintainers = [
+    { name = "Eusen", email = "179530591@qq.com" }
+]
+
+keywords = ["cli", "interactive", "inquirer", "prompt", "command-line", "tui"]
+
+classifiers = [
+    "Development Status :: 4",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+]
+
+dependencies = [
+
+]
+
+[project.urls]
+Homepage = "https://github.com/Eusen/inquirer_py"
+Documentation = "https://github.com/Eusen/inquirer_py#readme"
+"Bug Tracker" = "https://github.com/Eusen/inquirer_py/issues"
+"Source Code" = "https://github.com/Eusen/inquirer_py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=4.6.11",
+]
