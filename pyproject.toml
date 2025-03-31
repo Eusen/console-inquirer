@@ -1,31 +1,26 @@
 [project]
 name = "inquirer_console"
+
 version = "1.0.0"
+
 description = "Elegant interactive command-line interface tool library, Python implementation of Inquirer.js"
+
+keywords = ["cli", "interactive", "inquirer", "prompt", "command-line", "tui", "console"]
+
+readme = "README.md"
+
+requires-python = ">=3"
+
+license = { text = "Apache-2.0" }
+
 authors = [
     { name = "Eusen", email = "179530591@qq.com" }
 ]
-readme = "README.md"
-requires-python = ">=3"
-license = { text = "Apache-2.0" }
 
-
-dependencies = []
-[dependency-groups]
-dev = [
-    "pytest>=4.6.11",
-]
-
-[project.urls]
-Homepage = "https://github.com/Eusen/inquirer_py"
-Documentation = "https://github.com/Eusen/inquirer_py#readme"
-"Bug Tracker" = "https://github.com/Eusen/inquirer_py/issues"
-"Release notes" = "https://github.com/Eusen/inquirer_py/releases"
 maintainers = [
     { name = "Eusen", email = "179530591@qq.com" }
 ]
 
-keywords = ["cli", "interactive", "inquirer", "prompt", "command-line", "tui"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -42,14 +37,27 @@ classifiers = [
     "Topic :: Software Development :: User Interfaces",
 ]
 
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=4.6.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/Eusen/inquirer_console"
+Documentation = "https://github.com/Eusen/inquirer_console#readme"
+"Bug Tracker" = "https://github.com/Eusen/inquirer_console/issues"
+"Release notes" = "https://github.com/Eusen/inquirer_console/releases"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.setuptools]
+include-package-data = true
 packages = [
     "inquirer_console",
     "inquirer_console.prompts",
     "inquirer_console.utils",
 ]
-include-package-data = true
