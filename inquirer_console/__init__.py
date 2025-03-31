@@ -46,6 +46,14 @@ inquirer.register_prompt('checkbox', Checkbox)
 inquirer.register_prompt('password', Password)
 inquirer.register_prompt('text', Text)
 
+# 将prompt挂载到inquirer上
+inquirer.Input = Input
+inquirer.Confirm = Confirm
+inquirer.Select = Select
+inquirer.Checkbox = Checkbox
+inquirer.Password = Password
+inquirer.Text = Text
+
 # 导出所有内容以便用户导入
 __all__ = [
     'Inquirer',
