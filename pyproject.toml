@@ -1,5 +1,5 @@
 [project]
-name = "cosmicore.inquirer_py"
+name = "cosmicore.inquirer"
 version = "1.0.0"
 description = "优雅的交互式命令行界面工具库，Inquirer.js的Python实现"
 readme = "README.md"
