@@ -20,7 +20,7 @@ class Password(BasePrompt[str]):
 
     #### 示例:
     ```python
-    from inquirer_py import Password
+    from console-inquirer import Password
 
     password = Password(
         message="请输入您的密码",

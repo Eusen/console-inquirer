@@ -22,7 +22,7 @@ class Select(BasePrompt[Any]):
     
     示例:
     ```python
-    from inquirer_py import Select
+    from console-inquirer import Select
 
     choices = [
         {'name': 'Python', 'value': 'python'},

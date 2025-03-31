@@ -22,7 +22,7 @@ class Checkbox(BasePrompt[List[Any]]):
     
     #### 示例:
     ```python
-    from inquirer_py import Checkbox
+    from console-inquirer import Checkbox
 
     choices = [
         {'name': 'Python', 'value': 'python'},

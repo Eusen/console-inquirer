@@ -4,7 +4,7 @@
     <a href="README.md">English</a>
   </p>
   
-  <h1>🐣inquirer_py</h1>
+  <h1>🐣console-inquirer</h1>
   <p>An elegant interactive command line interface tool library</p>
   
   <p>
@@ -24,7 +24,7 @@
 
 ## 📖 Introduction
 
-inquirer_py is a Python implementation of [Inquirer.js](https://github.com/SBoudrias/Inquirer.js), providing a set of well-designed interactive command line interface components that allow developers to easily create beautiful, user-friendly command line applications.
+console-inquirer is a Python implementation of [Inquirer.js](https://github.com/SBoudrias/Inquirer.js), providing a set of well-designed interactive command line interface components that allow developers to easily create beautiful, user-friendly command line applications.
 
 ## ✨ Features
 

@@ -32,10 +32,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Eusen/inquirer_py"
-Documentation = "https://github.com/Eusen/inquirer_py#readme"
-"Bug Tracker" = "https://github.com/Eusen/inquirer_py/issues"
-"Source Code" = "https://github.com/Eusen/inquirer_py"
+Homepage = "https://github.com/Eusen/console-inquirer"
+Documentation = "https://github.com/Eusen/console-inquirer#readme"
+"Bug Tracker" = "https://github.com/Eusen/console-inquirer/issues"
+"Source Code" = "https://github.com/Eusen/console-inquirer"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
