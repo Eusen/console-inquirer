@@ -1,18 +1,18 @@
 <div align="center">
   <p>
-    <a href="README.md">中文</a> | 
-    <a href="README.en.md">English</a>
+    <a href="README.zh.md">中文</a> | 
+    <a href="README.md">English</a>
   </p>
   
   <h1>🐣inquirer_py</h1>
-  <p>优雅的交互式命令行界面工具库</p>
+  <p>An elegant interactive command line interface tool library</p>
   
   <p>
-    <a href="#-安装"><strong>安装指南</strong></a> •
-    <a href="#-特性"><strong>特性</strong></a> •
-    <a href="#-使用示例"><strong>使用示例</strong></a> •
-    <a href="#-api文档"><strong>API文档</strong></a> •
-    <a href="#-贡献指南"><strong>贡献指南</strong></a>
+    <a href="#-installation"><strong>Installation</strong></a> •
+    <a href="#-features"><strong>Features</strong></a> •
+    <a href="#-usage-examples"><strong>Usage Examples</strong></a> •
+    <a href="#-api-documentation"><strong>API Docs</strong></a> •
+    <a href="#-contributing"><strong>Contributing</strong></a>
   </p>
   
   <p>
@@ -22,69 +22,69 @@
   </p>
 </div>
 
-## 📖 简介
+## 📖 Introduction
 
-inquirer_py 是 [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) 的 Python 实现，提供了一组精心设计的交互式命令行用户界面组件，让开发者能够轻松创建美观、人性化的命令行应用程序。
+inquirer_py is a Python implementation of [Inquirer.js](https://github.com/SBoudrias/Inquirer.js), providing a set of well-designed interactive command line interface components that allow developers to easily create beautiful, user-friendly command line applications.
 
-## ✨ 特性
+## ✨ Features
 
-- **跨平台兼容** - 完美支持 Windows、macOS 和各种 Linux/Unix 系统
-- **优雅的中断处理** - 智能处理 Ctrl+C，确保用户体验流畅
-- **强大的输入验证** - 通过自定义 validate 函数轻松验证用户输入
-- **灵活的数据转换** - 通过 filter 函数实时转换用户输入
-- **链式 API** - 提供类似 Inquirer.js 的流畅 API，简化复杂交互
-- **完全类型注解** - 全面的类型提示，提升开发体验
-- **零外部依赖** - 纯 Python 标准库实现，无需额外安装
+- **Cross-platform compatibility** - Perfect support for Windows, macOS, and various Linux/Unix systems
+- **Elegant interrupt handling** - Intelligent handling of Ctrl+C, ensuring a smooth user experience
+- **Powerful input validation** - Easily validate user input through custom validate functions
+- **Flexible data transformation** - Transform user input in real-time through filter functions
+- **Chainable API** - Provides a fluent API similar to Inquirer.js, simplifying complex interactions
+- **Fully type-annotated** - Comprehensive type hints to enhance development experience
+- **Zero external dependencies** - Implemented with pure Python standard library, no additional installations required
 
-## 🧩 提示类型
+## 🧩 Prompt Types
 
-inquirer_py 目前实现了以下提示类型：
+inquirer_py currently implements the following prompt types:
 
-| 类型 | 描述 | 预览 |
-|------|------|------|
-| **Input** | 文本输入提示 | `> 请输入您的名字：` |
-| **Confirm** | 确认提示（是/否） | `> 是否继续？ (Y/n)：` |
-| **Select** | 列表选择提示（单选） | `> 选择一个选项：❯ 选项1 ⬡ 选项2 ⬡ 选项3` |
-| **Checkbox** | 复选框提示（多选） | `> 选择多个选项：❯ [X] 选项1 [ ] 选项2 [X] 选项3` |
-| **Password** | 密码输入提示 | `> 请输入密码：******` |
-| **Text** | 多行文本输入提示 | `> 请输入描述：(连续两次按Enter结束输入)` |
+| Type | Description | Preview |
+|------|-------------|---------|
+| **Input** | Text input prompt | `> Please enter your name:` |
+| **Confirm** | Confirmation prompt (yes/no) | `> Continue? (Y/n):` |
+| **Select** | List selection prompt (single choice) | `> Select an option: ❯ Option1 ⬡ Option2 ⬡ Option3` |
+| **Checkbox** | Checkbox prompt (multiple choice) | `> Select multiple options: ❯ [X] Option1 [ ] Option2 [X] Option3` |
+| **Password** | Password input prompt | `> Please enter a password: ******` |
+| **Text** | Multi-line text input prompt | `> Please enter a description: (Press Enter twice to finish)` |
 
-## 🚀 安装
+## 🚀 Installation
 
-目前处于开发阶段，您可以通过以下方式安装：
+Currently in development stage, you can install it via:
 
 ```bash
-# 直接从 GitHub 安装
+# Install directly from GitHub
 pip install git+https://github.com/Eusen/inquirer_py.git
 
-# 或者克隆仓库使用
+# Or clone the repository and use
 git clone https://github.com/Eusen/inquirer_py.git
 cd inquirer-py
 pip install -e .
 ```
 
-## 📝 使用示例
+## 📝 Usage Examples
 
-### 单独使用各个提示类型
+### Using Each Prompt Type Individually
 
 ```python
 from inquirer_py import Input, Confirm, Select, Checkbox, Password, Text
 
-# 输入提示
+# Input prompt
 name = Input(
-    message="你的名字是",
-    validate=lambda val: True if val else "名字不能为空！"
+    message="What is your name",
+    validate=lambda val: True if val else "Name cannot be empty!"
 ).prompt()
 
-# 确认提示
+# Confirm prompt
 likes_python = Confirm(
-    message="你喜欢Python吗",
+    message="Do you like Python",
     default=True
 ).prompt()
 
-# 选择提示
+# Select prompt
 favorite_lang = Select(
-    message="你最喜欢的编程语言是",
+    message="What is your favorite programming language",
     choices=[
         {'name': 'Python', 'value': 'python'},
         {'name': 'JavaScript', 'value': 'js'},
@@ -92,9 +92,9 @@ favorite_lang = Select(
     ]
 ).prompt()
 
-# 复选框提示
+# Checkbox prompt
 languages = Checkbox(
-    message="你会使用哪些编程语言",
+    message="Which programming languages do you use",
     choices=[
         {'name': 'Python', 'value': 'python', 'checked': True},
         {'name': 'JavaScript', 'value': 'js'},
@@ -102,41 +102,41 @@ languages = Checkbox(
     ]
 ).prompt()
 
-# 密码提示
+# Password prompt
 password = Password(
-    message="请输入一个密码",
-    validate=lambda val: True if len(val) >= 6 else "密码至少需要6个字符！"
+    message="Please enter a password",
+    validate=lambda val: True if len(val) >= 6 else "Password must be at least 6 characters!"
 ).prompt()
 
-# 多行文本提示 (连续两次按Enter结束输入)
+# Multi-line text prompt (finish by pressing Enter twice)
 description = Text(
-    message="请输入项目描述"
+    message="Please enter a project description"
 ).prompt()
 ```
 
-### 使用 inquirer 链式调用
+### Using inquirer Chain Calls
 
 ```python
 from inquirer_py import inquirer
 
-# 定义问题列表
+# Define a list of questions
 questions = [
     {
         'type': 'input',
         'name': 'name',
-        'message': '你的名字是',
-        'validate': lambda val: True if val else "名字不能为空！"
+        'message': 'What is your name',
+        'validate': lambda val: True if val else "Name cannot be empty!"
     },
     {
         'type': 'confirm',
         'name': 'likes_python',
-        'message': '你喜欢Python吗',
+        'message': 'Do you like Python',
         'default': True
     },
     {
         'type': 'list',
         'name': 'favorite_lang',
-        'message': '你最喜欢的编程语言是',
+        'message': 'What is your favorite programming language',
         'choices': [
             {'name': 'Python', 'value': 'python'},
             {'name': 'JavaScript', 'value': 'js'},
@@ -146,22 +146,22 @@ questions = [
     {
         'type': 'text',
         'name': 'bio',
-        'message': '请输入您的个人简介',
-        'help_text': '连续两次按Enter结束输入'
+        'message': 'Please enter your bio',
+        'help_text': 'Press Enter twice to finish input'
     }
 ]
 
-# 执行提示链
+# Execute the prompt chain
 answers = inquirer.prompt(questions)
 
-print(f"你好, {answers['name']}!")
+print(f"Hello, {answers['name']}!")
 if answers['likes_python']:
-    print("太好了，我也喜欢Python!")
-print(f"你最喜欢的语言是: {answers['favorite_lang']}")
-print(f"你的个人简介:\n{answers['bio']}")
+    print("Great, I like Python too!")
+print(f"Your favorite language is: {answers['favorite_lang']}")
+print(f"Your bio:\n{answers['bio']}")
 ```
 
-### 优雅处理中断
+### Gracefully Handling Interruptions
 
 ```python
 from inquirer_py import inquirer, ExitPromptError
@@ -171,17 +171,17 @@ try:
         {
             'type': 'input',
             'name': 'name',
-            'message': '你的名字是'
+            'message': 'What is your name'
         }
     ])
-    print(f"你好, {answers['name']}!")
+    print(f"Hello, {answers['name']}!")
 except ExitPromptError:
-    print("\n用户取消了操作，正在优雅退出...")
+    print("\nUser canceled the operation, gracefully exiting...")
 ```
 
-## 🔧 高级用法
+## 🔧 Advanced Usage
 
-### 验证和过滤
+### Validation and Filtering
 
 ```python
 from inquirer_py import Input
@@ -190,12 +190,12 @@ def validate_age(val):
     try:
         age = int(val)
         if age <= 0:
-            return "年龄必须是正整数！"
+            return "Age must be a positive integer!"
         elif age > 120:
-            return "年龄不能超过120岁！"
+            return "Age cannot exceed 120 years!"
         return True
     except ValueError:
-        return "请输入有效的数字！"
+        return "Please enter a valid number!"
 
 def filter_age(val):
     try:
@@ -204,138 +204,138 @@ def filter_age(val):
         return val
 
 age = Input(
-    message="你的年龄是",
+    message="What is your age",
     validate=validate_age,
     filter=filter_age
 ).prompt()
 
-print(f"你的年龄是: {age} (类型: {type(age).__name__})")
+print(f"Your age is: {age} (type: {type(age).__name__})")
 ```
 
-### 多行文本输入
+### Multi-line Text Input
 
 ```python
 from inquirer_py import Text
 
-# 基本用法 - 连续两次按Enter结束输入
+# Basic usage - finish by pressing Enter twice
 description = Text(
-    message="请输入项目描述"
+    message="Please enter a project description"
 ).prompt()
 
-# 同时支持双回车和END文本结束
+# Supports both double Enter and END text to finish
 bio = Text(
-    message="请输入您的个人简介",
-    end_text="END"  # 除了双回车外，还可以通过输入END结束
+    message="Please enter your bio",
+    end_text="END"  # Besides double Enter, can also finish by typing END
 ).prompt()
 
-# 带验证的多行文本输入
+# Multi-line text input with validation
 def validate_code(code):
     if "def main" not in code:
-        return "代码必须包含main函数！"
+        return "Code must include a main function!"
     return True
 
 code = Text(
-    message="请输入一个Python代码示例",
-    help_text="连续两次按Enter结束输入（代码必须包含main函数）",
+    message="Please enter a Python code example",
+    help_text="Press Enter twice to finish input (code must include main function)",
     validate=validate_code
 ).prompt()
 ```
 
-## 📚 API文档
+## 📚 API Documentation
 
-详细的API文档请访问我们的[官方文档网站](https://example.com/docs)。
+For detailed API documentation, please visit our [official documentation website](https://example.com/docs).
 
-### 基础提示属性
+### Basic Prompt Properties
 
-所有提示类型都继承自 `BasePrompt` 并支持以下通用参数：
+All prompt types inherit from `BasePrompt` and support the following common parameters:
 
-| 参数 | 类型 | 描述 |
-|------|------|------|
-| `message` | `str` | 向用户显示的提示消息 |
-| `name` | `str` | 提示的名称，用于在answers字典中存储答案 |
-| `default` | `Any` | 默认值，当用户未输入时使用 |
-| `validate` | `Callable` | 验证函数，返回True或错误消息 |
-| `filter` | `Callable` | 过滤函数，用于处理/转换用户输入 |
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `message` | `str` | The prompt message displayed to the user |
+| `name` | `str` | The name of the prompt, used to store the answer in the answers dictionary |
+| `default` | `Any` | Default value, used when the user doesn't provide input |
+| `validate` | `Callable` | Validation function, returns True or an error message |
+| `filter` | `Callable` | Filter function, used to process/transform user input |
 
-有关每种提示类型的特定参数，请参阅完整文档。
+For specific parameters for each prompt type, please refer to the complete documentation.
 
-## 🧪 测试
+## 🧪 Testing
 
-### 运行测试
+### Running Tests
 
-项目使用 pytest 进行测试。要运行测试，请执行以下命令：
+The project uses pytest for testing. To run tests, execute the following commands:
 
 ```bash
-# 运行所有测试
+# Run all tests
 pytest
 
-# 运行特定测试文件
+# Run a specific test file
 pytest tests/test_input.py
 
-# 运行特定测试用例
+# Run a specific test case
 pytest tests/test_input.py::test_input_validation
 
-# 运行并显示详细输出
+# Run with verbose output
 pytest -v
 
-# 生成覆盖率报告
+# Generate coverage report
 pytest --cov=src
 ```
 
-### 添加新测试
+### Adding New Tests
 
-添加新功能时，请同时添加相应的测试。测试文件应放在 `tests/` 目录中，并以 `test_` 开头。
+When adding new features, please also add corresponding tests. Test files should be placed in the `tests/` directory and should start with `test_`.
 
 ```python
 # tests/test_example.py
 def test_new_feature():
-    # 准备测试数据
-    # 执行被测试的功能
-    # 验证结果是否符合预期
+    # Prepare test data
+    # Execute the feature being tested
+    # Verify the results meet expectations
     assert result == expected
 ```
 
-### 测试覆盖率目标
+### Test Coverage Goals
 
-我们的目标是保持至少 90% 的测试覆盖率。在提交 PR 前，请确保您的代码更改有适当的测试覆盖。
+Our goal is to maintain at least 90% test coverage. Before submitting a PR, please ensure your code changes have adequate test coverage.
 
-## 🤝 贡献指南
+## 🤝 Contributing
 
-我们欢迎所有形式的贡献，无论是新功能、文档改进还是错误修复。请查看我们的[贡献指南](CONTRIBUTING.md)了解如何参与项目。
+We welcome all forms of contributions, whether they are new features, documentation improvements, or bug fixes. Please check our [contribution guidelines](CONTRIBUTING.md) to learn how to participate in the project.
 
-### 开发环境设置
+### Development Environment Setup
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/Eusen/inquirer_py.git
 cd inquirer-py
 
-# 创建并激活虚拟环境
+# Create and activate a virtual environment
 python -m venv venv
 source venv/bin/activate  # Unix/macOS
-# 或
+# or
 venv\Scripts\activate  # Windows
 
-# 安装开发依赖
+# Install development dependencies
 pip install -e ".[dev]"
 
-# 运行测试
+# Run tests
 pytest
 ```
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 [MIT 许可证](LICENSE) 进行许可。
+This project is licensed under the [MIT License](LICENSE).
 
-## 💖 支持项目
+## 💖 Support the Project
 
-如果你喜欢这个项目，可以通过以下方式支持我们：
+If you like this project, you can support us by:
 
-- ⭐ 在 GitHub 上给我们点星
-- 📣 在社交媒体上分享项目
-- 🐛 提交 issue 或 PR
-- 📝 完善文档
+- ⭐ Starring us on GitHub
+- 📣 Sharing the project on social media
+- 🐛 Submitting issues or PRs
+- 📝 Improving documentation
 
 ---
 
-<p align="center">用 ❤️ 打造</p> 
+<p align="center">Made with ❤️</p> 
