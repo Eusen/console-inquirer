@@ -3,7 +3,7 @@
 """
 import pytest
 
-from packages import Checkbox
+from inquirer_console import Checkbox
 
 
 class TestCheckbox:

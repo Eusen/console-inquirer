@@ -3,7 +3,7 @@
 """
 import pytest
 
-from packages import Select
+from inquirer_console import Select
 
 
 class TestSelect:

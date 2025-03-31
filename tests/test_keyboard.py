@@ -5,6 +5,7 @@ import os
 import pytest
 from unittest.mock import patch
 
+from inquirer_console.utils import keyboard
 
 class TestKeyboard:
     """测试键盘输入工具模块"""
@@ -16,9 +17,8 @@ class TestKeyboard:
         """测试Windows环境下的get_key函数"""
         # 导入新的键盘模块，以确保使用模拟的环境变量
         import sys
-        if 'packages.utils.keyboard' in sys.modules:
-            del sys.modules['packages.utils.keyboard']
-        from packages import keyboard
+        if 'inquirer_console.utils.keyboard' in sys.modules:
+            del sys.modules['inquirer_console.utils.keyboard']
 
         # 模拟无按键输入
         mock_kbhit.return_value = False
@@ -55,9 +55,8 @@ class TestKeyboard:
         """测试Windows环境下的wait_for_key函数"""
         # 导入新的键盘模块，以确保使用模拟的环境变量
         import sys
-        if 'packages.utils.keyboard' in sys.modules:
-            del sys.modules['packages.utils.keyboard']
-        from packages import keyboard
+        if 'inquirer_console.utils.keyboard' in sys.modules:
+            del sys.modules['inquirer_console.utils.keyboard']
 
         # 模拟常规按键输入
         mock_getch.return_value = b'a'
@@ -81,7 +80,7 @@ class TestKeyboard:
 
         # 模拟无按键输入
         mock_select.return_value = ([], None, None)
-        from packages import get_key
+        get_key = keyboard.get_key
         assert get_key() == ""
 
         # 模拟常规按键输入
@@ -114,7 +113,7 @@ class TestKeyboard:
 
         # 模拟常规按键输入
         mock_stdin.read.return_value = "a"
-        from packages import wait_for_key
+        wait_for_key = keyboard.wait_for_key
         assert wait_for_key() == "a"
 
         # 模拟上箭头键

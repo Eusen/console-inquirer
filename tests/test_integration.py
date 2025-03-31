@@ -4,15 +4,15 @@
 import pytest
 from unittest.mock import patch, MagicMock
 
-from packages import inquirer, ExitPromptError
+from inquirer_console import inquirer, ExitPromptError
 
 
 class TestInquirerIntegration:
     """测试inquirer整合功能"""
 
-    @patch('packages.prompts.input.Input._prompt')
-    @patch('packages.prompts.confirm.Confirm._prompt')
-    @patch('packages.prompts.select.Select._prompt')
+    @patch('inquirer_console.prompts.input.Input._prompt')
+    @patch('inquirer_console.prompts.confirm.Confirm._prompt')
+    @patch('inquirer_console.prompts.select.Select._prompt')
     def test_prompt_chain(self, mock_list_prompt, mock_confirm_prompt, mock_input_prompt):
         """测试提示链式调用"""
         # 设置各个提示类的模拟返回值
@@ -64,12 +64,12 @@ class TestInquirerIntegration:
     def test_prompt_chain_with_all_types(self):
         """测试所有提示类型的链式调用"""
         # 创建所有提示类型的模拟
-        with patch('packages.prompts.input.Input._prompt') as mock_input, \
-             patch('packages.prompts.confirm.Confirm._prompt') as mock_confirm, \
-             patch('packages.prompts.select.Select._prompt') as mock_list, \
-             patch('packages.prompts.checkbox.Checkbox._prompt') as mock_checkbox, \
-             patch('packages.prompts.password.Password._prompt') as mock_password, \
-             patch('packages.prompts.text.Text._prompt') as mock_text:
+        with patch('inquirer_console.prompts.input.Input._prompt') as mock_input, \
+             patch('inquirer_console.prompts.confirm.Confirm._prompt') as mock_confirm, \
+             patch('inquirer_console.prompts.select.Select._prompt') as mock_list, \
+             patch('inquirer_console.prompts.checkbox.Checkbox._prompt') as mock_checkbox, \
+             patch('inquirer_console.prompts.password.Password._prompt') as mock_password, \
+             patch('inquirer_console.prompts.text.Text._prompt') as mock_text:
             
             # 设置各个提示类的模拟返回值
             mock_input.return_value = "测试用户"
@@ -104,7 +104,7 @@ class TestInquirerIntegration:
     def test_exit_prompt_propagation(self):
         """测试退出提示异常的传播"""
         # 创建会引发ExitError的模拟
-        with patch('packages.prompts.input.Input.prompt', side_effect=ExitPromptError()):
+        with patch('inquirer_console.prompts.input.Input.prompt', side_effect=ExitPromptError()):
             # 定义问题列表
             questions = [
                 {'type': 'input', 'name': 'name', 'message': '姓名'},

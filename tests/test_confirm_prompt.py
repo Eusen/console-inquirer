@@ -1,7 +1,7 @@
 """
 测试Confirm（确认提示）类
 """
-from packages import Confirm
+from inquirer_console import Confirm
 
 
 class TestConfirm:

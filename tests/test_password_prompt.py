@@ -3,7 +3,7 @@
 """
 from unittest.mock import patch
 
-from packages import Password
+from inquirer_console import Password
 
 
 class TestPassword:

@@ -1,7 +1,7 @@
 """
 测试Input（输入提示）类
 """
-from packages import Input
+from inquirer_console import Input
 
 
 class TestInput:
