@@ -15,11 +15,10 @@ class TestKeyboard:
     def test_get_key_windows(self, mock_getch, mock_kbhit):
         """测试Windows环境下的get_key函数"""
         # 导入新的键盘模块，以确保使用模拟的环境变量
-        import importlib
         import sys
-        if 'src.utils.keyboard' in sys.modules:
-            del sys.modules['src.utils.keyboard']
-        from src.utils import keyboard
+        if 'packages.utils.keyboard' in sys.modules:
+            del sys.modules['packages.utils.keyboard']
+        from packages import keyboard
 
         # 模拟无按键输入
         mock_kbhit.return_value = False
@@ -55,11 +54,10 @@ class TestKeyboard:
     def test_wait_for_key_windows(self, mock_getch):
         """测试Windows环境下的wait_for_key函数"""
         # 导入新的键盘模块，以确保使用模拟的环境变量
-        import importlib
         import sys
-        if 'src.utils.keyboard' in sys.modules:
-            del sys.modules['src.utils.keyboard']
-        from src.utils import keyboard
+        if 'packages.utils.keyboard' in sys.modules:
+            del sys.modules['packages.utils.keyboard']
+        from packages import keyboard
 
         # 模拟常规按键输入
         mock_getch.return_value = b'a'
@@ -83,7 +81,7 @@ class TestKeyboard:
 
         # 模拟无按键输入
         mock_select.return_value = ([], None, None)
-        from src.utils.keyboard import get_key
+        from packages import get_key
         assert get_key() == ""
 
         # 模拟常规按键输入
@@ -116,7 +114,7 @@ class TestKeyboard:
 
         # 模拟常规按键输入
         mock_stdin.read.return_value = "a"
-        from src.utils.keyboard import wait_for_key
+        from packages import wait_for_key
         assert wait_for_key() == "a"
 
         # 模拟上箭头键

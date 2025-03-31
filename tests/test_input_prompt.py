@@ -1,7 +1,7 @@
 """
 测试Input（输入提示）类
 """
-from src.prompts.input import Input
+from packages import Input
 
 
 class TestInput:

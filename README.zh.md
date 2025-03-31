@@ -282,7 +282,7 @@ pytest tests/test_input.py::test_input_validation
 pytest -v
 
 # 生成覆盖率报告
-pytest --cov=src
+pytest --cov=packages
 ```
 
 ### 添加新测试

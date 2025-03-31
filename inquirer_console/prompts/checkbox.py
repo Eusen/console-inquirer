@@ -6,7 +6,7 @@ import time
 from typing import List, Dict, Any, Optional, Union, Callable
 
 from ..prompt import BasePrompt
-from src.utils.keyboard import get_key
+from ..utils.keyboard import get_key
 
 
 class Checkbox(BasePrompt[List[Any]]):

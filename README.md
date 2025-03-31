@@ -282,7 +282,7 @@ pytest tests/test_input.py::test_input_validation
 pytest -v
 
 # Generate coverage report
-pytest --cov=src
+pytest --cov=packages
 ```
 
 ### Adding New Tests

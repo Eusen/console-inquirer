@@ -2,49 +2,54 @@
 name = "inquirer_console"
 version = "1.0.0"
 description = "Elegant interactive command-line interface tool library, Python implementation of Inquirer.js"
-readme = "README.md"
-requires-python = ">=3"
-license = { text = "MIT" }
-
 authors = [
     { name = "Eusen", email = "179530591@qq.com" }
 ]
+readme = "README.md"
+requires-python = ">=3"
+license = { text = "Apache-2.0" }
 
-maintainers = [
-    { name = "Eusen", email = "179530591@qq.com" }
-]
 
-keywords = ["cli", "interactive", "inquirer", "prompt", "command-line", "tui"]
-
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.12",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Software Development :: User Interfaces",
-]
-
-dependencies = [
-
+dependencies = []
+[dependency-groups]
+dev = [
+    "pytest>=4.6.11",
 ]
 
 [project.urls]
 Homepage = "https://github.com/Eusen/inquirer_py"
 Documentation = "https://github.com/Eusen/inquirer_py#readme"
 "Bug Tracker" = "https://github.com/Eusen/inquirer_py/issues"
-"Source Code" = "https://github.com/Eusen/inquirer_py"
+"Release notes" = "https://github.com/Eusen/inquirer_py/releases"
+maintainers = [
+    { name = "Eusen", email = "179530591@qq.com" }
+]
+
+keywords = ["cli", "interactive", "inquirer", "prompt", "command-line", "tui"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build.targets.wheel]
-packages = ["."]
-
-[dependency-groups]
-dev = [
-    "pytest>=4.6.11",
+[tool.setuptools]
+packages = [
+    "inquirer_console",
+    "inquirer_console.prompts",
+    "inquirer_console.utils",
 ]
+include-package-data = true

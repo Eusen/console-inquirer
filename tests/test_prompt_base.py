@@ -5,7 +5,7 @@ import pytest
 import signal
 from unittest.mock import patch, MagicMock
 
-from src.prompt import BasePrompt, ExitPromptError
+from packages import BasePrompt, ExitPromptError
 
 
 class TestBase:
@@ -69,7 +69,7 @@ class TestInquirer:
     
     def test_register_prompt(self):
         """测试注册提示类型"""
-        from src.prompt import Inquirer
+        from packages import Inquirer
         
         inquirer = Inquirer()
         mock_class = MagicMock()
@@ -79,7 +79,7 @@ class TestInquirer:
     
     def test_prompt_unknown_type(self):
         """测试使用未知提示类型"""
-        from src.prompt import Inquirer
+        from packages import Inquirer
         
         inquirer = Inquirer()
         
@@ -94,7 +94,7 @@ class TestInquirer:
     
     def test_prompt_chain(self):
         """测试提示链"""
-        from src.prompt import Inquirer
+        from packages import Inquirer
         
         # 创建模拟提示类
         mock_prompt = MagicMock()

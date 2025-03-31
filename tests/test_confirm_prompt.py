@@ -1,7 +1,7 @@
 """
 测试Confirm（确认提示）类
 """
-from src.prompts.confirm import Confirm
+from packages import Confirm
 
 
 class TestConfirm:

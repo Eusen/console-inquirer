@@ -2,9 +2,8 @@
 测试Select（列表选择提示）类
 """
 import pytest
-from unittest.mock import patch, MagicMock
 
-from src.prompts.select import Select
+from packages import Select
 
 
 class TestSelect:

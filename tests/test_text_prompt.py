@@ -3,7 +3,7 @@
 """
 from unittest.mock import patch
 
-from src.prompts.text import Text
+from packages import Text
 
 
 class TestText:

@@ -6,7 +6,7 @@ import time
 from typing import List, Dict, Any, Optional, Union, Callable
 
 from ..prompt import BasePrompt
-from src.utils.keyboard import get_key
+from inquirer_console.utils.keyboard import get_key
 
 
 class Select(BasePrompt[Any]):

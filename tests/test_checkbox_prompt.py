@@ -2,9 +2,8 @@
 测试Checkbox（复选框提示）类
 """
 import pytest
-from unittest.mock import patch, MagicMock
 
-from src.prompts.checkbox import Checkbox
+from packages import Checkbox
 
 
 class TestCheckbox:
