@@ -41,7 +41,7 @@ from .prompts.text import Text
 inquirer = Inquirer()
 inquirer.register_prompt('input', Input)
 inquirer.register_prompt('confirm', Confirm)
-inquirer.register_prompt('list', Select)
+inquirer.register_prompt('select', Select)
 inquirer.register_prompt('checkbox', Checkbox)
 inquirer.register_prompt('password', Password)
 inquirer.register_prompt('text', Text)
