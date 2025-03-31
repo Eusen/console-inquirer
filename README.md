@@ -40,14 +40,14 @@ inquirer_console is a Python implementation of [Inquirer.js](https://github.com/
 
 inquirer_console currently implements the following prompt types:
 
-| Type | Description | Preview |
-|------|-------------|---------|
-| **Input** | Text input prompt | `> Please enter your name:` |
-| **Confirm** | Confirmation prompt (yes/no) | `> Continue? (Y/n):` |
-| **Select** | List selection prompt (single choice) | `> Select an option: ❯ Option1 ⬡ Option2 ⬡ Option3` |
+| Type | Description                       | Preview |
+|------|-----------------------------------|---------|
+| **Input** | Text input prompt                 | `> Please enter your name:` |
+| **Confirm** | Confirmation prompt (yes/no)      | `> Continue? (Y/n):` |
+| **Radio** | Radio prompt (single choice)      | `> Select an option: ❯ Option1 ⬡ Option2 ⬡ Option3` |
 | **Checkbox** | Checkbox prompt (multiple choice) | `> Select multiple options: ❯ [X] Option1 [ ] Option2 [X] Option3` |
-| **Password** | Password input prompt | `> Please enter a password: ******` |
-| **Text** | Multi-line text input prompt | `> Please enter a description: (Press Enter twice to finish)` |
+| **Password** | Password input prompt             | `> Please enter a password: ******` |
+| **Text** | Multi-line text input prompt      | `> Please enter a description: (Press Enter twice to finish)` |
 
 ## 🚀 Installation
 
@@ -71,7 +71,7 @@ pip install -e .
 ### Using Each Prompt Type Individually
 
 ```python
-from inquirer_console import Input, Confirm, Select, Checkbox, Password, Text
+from inquirer_console import Input, Confirm, Radio, Checkbox, Password, Text
 
 # Input prompt
 name = Input(
@@ -85,8 +85,8 @@ likes_python = Confirm(
     default=True
 ).prompt()
 
-# Select prompt
-favorite_lang = Select(
+# Radio prompt
+favorite_lang = Radio(
     message="What is your favorite programming language",
     choices=[
         {'name': 'Python', 'value': 'python'},
@@ -137,7 +137,7 @@ questions = [
         'default': True
     },
     {
-        'type': 'select',
+        'type': 'radio',
         'name': 'favorite_lang',
         'message': 'What is your favorite programming language',
         'choices': [

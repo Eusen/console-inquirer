@@ -12,7 +12,7 @@ class TestInquirerIntegration:
 
     @patch('inquirer_console.prompts.input.Input._prompt')
     @patch('inquirer_console.prompts.confirm.Confirm._prompt')
-    @patch('inquirer_console.prompts.select.Select._prompt')
+    @patch('inquirer_console.prompts.radio.Radio._prompt')
     def test_prompt_chain(self, mock_list_prompt, mock_confirm_prompt, mock_input_prompt):
         """测试提示链式调用"""
         # 设置各个提示类的模拟返回值
@@ -35,7 +35,7 @@ class TestInquirerIntegration:
                 'default': True
             },
             {
-                'type': 'select',
+                'type': 'radio',
                 'name': 'favorite_lang',
                 'message': '你最喜欢的编程语言是',
                 'choices': [
@@ -66,7 +66,7 @@ class TestInquirerIntegration:
         # 创建所有提示类型的模拟
         with patch('inquirer_console.prompts.input.Input._prompt') as mock_input, \
              patch('inquirer_console.prompts.confirm.Confirm._prompt') as mock_confirm, \
-             patch('inquirer_console.prompts.select.Select._prompt') as mock_list, \
+             patch('inquirer_console.prompts.radio.Radio._prompt') as mock_list, \
              patch('inquirer_console.prompts.checkbox.Checkbox._prompt') as mock_checkbox, \
              patch('inquirer_console.prompts.password.Password._prompt') as mock_password, \
              patch('inquirer_console.prompts.text.Text._prompt') as mock_text:
@@ -83,7 +83,7 @@ class TestInquirerIntegration:
             questions = [
                 {'type': 'input', 'name': 'name', 'message': '姓名'},
                 {'type': 'confirm', 'name': 'confirm', 'message': '确认'},
-                {'type': 'select', 'name': 'select', 'message': '列表', 'choices': ['a', 'b']},
+                {'type': 'radio', 'name': 'radio', 'message': '列表', 'choices': ['a', 'b']},
                 {'type': 'checkbox', 'name': 'checkbox', 'message': '复选框', 'choices': ['a', 'b']},
                 {'type': 'password', 'name': 'password', 'message': '密码'},
                 {'type': 'text', 'name': 'text', 'message': '文本'}
@@ -93,10 +93,10 @@ class TestInquirerIntegration:
             answers = inquirer.prompt(questions)
             
             # 验证结果包含所有问题的答案
-            assert set(answers.keys()) == {'name', 'confirm', 'select', 'checkbox', 'password', 'text'}
+            assert set(answers.keys()) == {'name', 'confirm', 'radio', 'checkbox', 'password', 'text'}
             assert answers['name'] == "测试用户"
             assert answers['confirm'] is True
-            assert answers['select'] == "python"
+            assert answers['radio'] == "python"
             assert answers['checkbox'] == ["python", "js"]
             assert answers['password'] == "secure_password"
             assert answers['text'] == "这是一段多行文本\n测试示例"

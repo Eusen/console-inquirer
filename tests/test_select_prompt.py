@@ -1,17 +1,17 @@
 """
-测试Select（列表选择提示）类
+测试Radio（列表选择提示）类
 """
 import pytest
 
-from inquirer_console import Select
+from inquirer_console import Radio
 
 
-class TestSelect:
-    """测试Select类"""
+class TestRadio:
+    """测试Radio类"""
 
     def test_init_with_string_choices(self):
         """测试使用字符串列表初始化"""
-        prompt = Select(
+        prompt = Radio(
             message="测试消息",
             choices=["选项1", "选项2", "选项3"]
         )
@@ -31,7 +31,7 @@ class TestSelect:
             {"name": "Rust", "value": "rust"}
         ]
 
-        prompt = Select(
+        prompt = Radio(
             message="测试消息",
             choices=choices
         )
@@ -52,7 +52,7 @@ class TestSelect:
         ]
 
         # 使用值作为默认值
-        prompt = Select(
+        prompt = Radio(
             message="测试消息",
             choices=choices,
             default="js"
@@ -61,7 +61,7 @@ class TestSelect:
         assert prompt.selected_index == 1
 
         # 使用索引作为默认值
-        prompt = Select(
+        prompt = Radio(
             message="测试消息",
             choices=choices,
             default=2
@@ -77,7 +77,7 @@ class TestSelect:
         ]
 
         with pytest.raises(ValueError, match="选项 0 缺少'name'属性"):
-            Select(message="测试消息", choices=choices)
+            Radio(message="测试消息", choices=choices)
 
     def test_init_with_missing_value(self):
         """测试选项缺少value属性时自动使用name"""
@@ -86,14 +86,14 @@ class TestSelect:
             {"name": "JavaScript", "value": "js"}
         ]
 
-        prompt = Select(message="测试消息", choices=choices)
+        prompt = Radio(message="测试消息", choices=choices)
         assert prompt.choices[0] == {"name": "Python", "value": "Python"}
         assert prompt.choices[1] == {"name": "JavaScript", "value": "js"}
 
     def test_selection_logic(self):
         """测试选择逻辑，不依赖键盘输入"""
         choices = ["选项1", "选项2", "选项3"]
-        prompt = Select(message="测试消息", choices=choices)
+        prompt = Radio(message="测试消息", choices=choices)
 
         # 模拟向下移动
         prompt.selected_index = 0
@@ -117,7 +117,7 @@ class TestSelect:
                 return True
             return "只能选择选项2"
 
-        prompt = Select(
+        prompt = Radio(
             message="测试消息",
             choices=choices,
             validate=validate_func
@@ -141,7 +141,7 @@ class TestSelect:
                 raise Exception("验证过程中出错")
             return True
 
-        prompt = Select(
+        prompt = Radio(
             message="测试消息",
             choices=choices,
             validate=validate_func

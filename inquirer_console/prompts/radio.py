@@ -9,7 +9,7 @@ from ..prompt import BasePrompt
 from inquirer_console.utils.keyboard import get_key
 
 
-class Select(BasePrompt[Any]):
+class Radio(BasePrompt[Any]):
     """
     列表选择提示类，用于从选项列表中选择一个选项。
 
@@ -22,7 +22,7 @@ class Select(BasePrompt[Any]):
     
     示例:
     ```python
-    from inquirer_console import Select
+    from inquirer_console import Radio
 
     choices = [
         {'name': 'Python', 'value': 'python'},
@@ -30,7 +30,7 @@ class Select(BasePrompt[Any]):
         {'name': 'Rust', 'value': 'rust'}
     ]
 
-    favorite_lang = Select(
+    favorite_lang = Radio(
         message="你最喜欢的编程语言是?",
         choices=choices
     ).prompt()
