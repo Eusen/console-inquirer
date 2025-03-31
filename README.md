@@ -3,11 +3,11 @@
   <p>优雅的交互式命令行界面工具库</p>
   
   <p>
-    <a href="#安装"><strong>安装指南</strong></a> •
-    <a href="#特性"><strong>特性</strong></a> •
-    <a href="#使用示例"><strong>使用示例</strong></a> •
-    <a href="#api文档"><strong>API文档</strong></a> •
-    <a href="#贡献指南"><strong>贡献指南</strong></a>
+    <a href="#-安装"><strong>安装指南</strong></a> •
+    <a href="#-特性"><strong>特性</strong></a> •
+    <a href="#-使用示例"><strong>使用示例</strong></a> •
+    <a href="#-api文档"><strong>API文档</strong></a> •
+    <a href="#-贡献指南"><strong>贡献指南</strong></a>
   </p>
   
   <p>
