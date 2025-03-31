@@ -1,5 +1,5 @@
 [project]
-name = "console-inquirer"
+name = "inquirer_console"
 version = "1.0.0"
 description = "优雅的交互式命令行界面工具库，Inquirer.js的Python实现"
 readme = "README.md"
@@ -32,10 +32,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Eusen/console-inquirer"
-Documentation = "https://github.com/Eusen/console-inquirer#readme"
-"Bug Tracker" = "https://github.com/Eusen/console-inquirer/issues"
-"Source Code" = "https://github.com/Eusen/console-inquirer"
+Homepage = "https://github.com/Eusen/inquirer_console"
+Documentation = "https://github.com/Eusen/inquirer_console#readme"
+"Bug Tracker" = "https://github.com/Eusen/inquirer_console/issues"
+"Source Code" = "https://github.com/Eusen/inquirer_console"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]

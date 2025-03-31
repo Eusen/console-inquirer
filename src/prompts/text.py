@@ -22,7 +22,7 @@ class Text(BasePrompt[str]):
     
     #### 示例:
     ```python
-    from console-inquirer import Text
+    from inquirer_console import Text
 
     description = Text(
         message="请输入项目描述"

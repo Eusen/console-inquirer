@@ -4,7 +4,7 @@
     <a href="README.md">English</a>
   </p>
   
-  <h1>🐣console-inquirer</h1>
+  <h1>🐣inquirer_console</h1>
   <p>An elegant interactive command line interface tool library</p>
   
   <p>
@@ -24,7 +24,7 @@
 
 ## 📖 Introduction
 
-console-inquirer is a Python implementation of [Inquirer.js](https://github.com/SBoudrias/Inquirer.js), providing a set of well-designed interactive command line interface components that allow developers to easily create beautiful, user-friendly command line applications.
+inquirer_console is a Python implementation of [Inquirer.js](https://github.com/SBoudrias/Inquirer.js), providing a set of well-designed interactive command line interface components that allow developers to easily create beautiful, user-friendly command line applications.
 
 ## ✨ Features
 
@@ -38,7 +38,7 @@ console-inquirer is a Python implementation of [Inquirer.js](https://github.com/
 
 ## 🧩 Prompt Types
 
-console-inquirer currently implements the following prompt types:
+inquirer_console currently implements the following prompt types:
 
 | Type | Description | Preview |
 |------|-------------|---------|
@@ -55,14 +55,14 @@ Currently in development stage, you can install it via:
 
 ```bash
 # Install from PyPI
-pip install console-inquirer
+pip install inquirer_console
 
 # Install directly from GitHub
-pip install git+https://github.com/Eusen/console-inquirer.git
+pip install git+https://github.com/Eusen/inquirer_console.git
 
 # Or clone the repository and use
-git clone https://github.com/Eusen/console-inquirer.git
-cd console-inquirer
+git clone https://github.com/Eusen/inquirer_console.git
+cd inquirer_console
 pip install -e .
 ```
 
@@ -71,7 +71,7 @@ pip install -e .
 ### Using Each Prompt Type Individually
 
 ```python
-from console-inquirer import Input, Confirm, Select, Checkbox, Password, Text
+from inquirer_console import Input, Confirm, Select, Checkbox, Password, Text
 
 # Input prompt
 name = Input(
@@ -120,7 +120,7 @@ description = Text(
 ### Using inquirer Chain Calls
 
 ```python
-from console-inquirer import inquirer
+from inquirer_console import inquirer
 
 # Define a list of questions
 questions = [
@@ -167,7 +167,7 @@ print(f"Your bio:\n{answers['bio']}")
 ### Gracefully Handling Interruptions
 
 ```python
-from console-inquirer import inquirer, ExitPromptError
+from inquirer_console import inquirer, ExitPromptError
 
 try:
     answers = inquirer.prompt([
@@ -187,7 +187,7 @@ except ExitPromptError:
 ### Validation and Filtering
 
 ```python
-from console-inquirer import Input
+from inquirer_console import Input
 
 def validate_age(val):
     try:
@@ -218,7 +218,7 @@ print(f"Your age is: {age} (type: {type(age).__name__})")
 ### Multi-line Text Input
 
 ```python
-from console-inquirer import Text
+from inquirer_console import Text
 
 # Basic usage - finish by pressing Enter twice
 description = Text(
@@ -310,8 +310,8 @@ We welcome all forms of contributions, whether they are new features, documentat
 
 ```bash
 # Clone the repository
-git clone https://github.com/Eusen/console-inquirer.git
-cd console-inquirer
+git clone https://github.com/Eusen/inquirer_console.git
+cd inquirer_console
 
 # Create and activate a virtual environment
 python -m venv venv

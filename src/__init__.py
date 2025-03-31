@@ -5,7 +5,7 @@ Inquirer.js风格的命令行提示模块的Python实现。
 
 示例：
 ```python
-from console-inquirer import Inquirer, Input, Confirm, List, Checkbox, Password
+from inquirer_console import Inquirer, Input, Confirm, List, Checkbox, Password
 
 # 使用单独的提示
 name = Input(message="你的名字是?").prompt()

@@ -21,7 +21,7 @@ class Input(BasePrompt[str]):
     
     #### 示例:
     ```python
-    from console-inquirer import Input
+    from inquirer_console import Input
 
     name = Input(message="你的名字是?").prompt()
     print(f"你好, {name}!")

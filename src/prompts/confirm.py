@@ -18,7 +18,7 @@ class Confirm(BasePrompt[bool]):
     
     #### 示例:
     ```python
-    from console-inquirer import Confirm
+    from inquirer_console import Confirm
 
     likes_python = Confirm(message="你喜欢Python吗?", default=True).prompt()
     if likes_python:
