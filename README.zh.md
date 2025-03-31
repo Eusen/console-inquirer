@@ -4,7 +4,7 @@
     <a href="README.md">English</a>
   </p>
   
-  <h1>🐣inquirer_py</h1>
+  <h1>🐣console-inquirer</h1>
   <p>优雅的交互式命令行界面工具库</p>
   
   <p>
@@ -24,7 +24,7 @@
 
 ## 📖 简介
 
-inquirer_py 是 [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) 的 Python 实现，提供了一组精心设计的交互式命令行用户界面组件，让开发者能够轻松创建美观、人性化的命令行应用程序。
+console-inquirer 是 [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) 的 Python 实现，提供了一组精心设计的交互式命令行用户界面组件，让开发者能够轻松创建美观、人性化的命令行应用程序。
 
 ## ✨ 特性
 
@@ -38,7 +38,7 @@ inquirer_py 是 [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) 的 Pyth
 
 ## 🧩 提示类型
 
-inquirer_py 目前实现了以下提示类型：
+console-inquirer 目前实现了以下提示类型：
 
 | 类型 | 描述 | 预览 |
 |------|------|------|
@@ -54,12 +54,15 @@ inquirer_py 目前实现了以下提示类型：
 目前处于开发阶段，您可以通过以下方式安装：
 
 ```bash
+# 从 PyPI 安装
+pip install console-inquirer
+
 # 直接从 GitHub 安装
-pip install git+https://github.com/Eusen/inquirer_py.git
+pip install git+https://github.com/Eusen/console-inquirer.git
 
 # 或者克隆仓库使用
-git clone https://github.com/Eusen/inquirer_py.git
-cd inquirer-py
+git clone https://github.com/Eusen/console-inquirer.git
+cd console-inquirer
 pip install -e .
 ```
 
@@ -68,7 +71,7 @@ pip install -e .
 ### 单独使用各个提示类型
 
 ```python
-from inquirer_py import Input, Confirm, Select, Checkbox, Password, Text
+from console-inquirer import Input, Confirm, Select, Checkbox, Password, Text
 
 # 输入提示
 name = Input(
@@ -117,7 +120,7 @@ description = Text(
 ### 使用 inquirer 链式调用
 
 ```python
-from inquirer_py import inquirer
+from console-inquirer import inquirer
 
 # 定义问题列表
 questions = [
@@ -164,7 +167,7 @@ print(f"你的个人简介:\n{answers['bio']}")
 ### 优雅处理中断
 
 ```python
-from inquirer_py import inquirer, ExitPromptError
+from console-inquirer import inquirer, ExitPromptError
 
 try:
     answers = inquirer.prompt([
@@ -184,7 +187,7 @@ except ExitPromptError:
 ### 验证和过滤
 
 ```python
-from inquirer_py import Input
+from console-inquirer import Input
 
 def validate_age(val):
     try:
@@ -215,7 +218,7 @@ print(f"你的年龄是: {age} (类型: {type(age).__name__})")
 ### 多行文本输入
 
 ```python
-from inquirer_py import Text
+from console-inquirer import Text
 
 # 基本用法 - 连续两次按Enter结束输入
 description = Text(
@@ -307,8 +310,8 @@ def test_new_feature():
 
 ```bash
 # 克隆仓库
-git clone https://github.com/Eusen/inquirer_py.git
-cd inquirer-py
+git clone https://github.com/Eusen/console-inquirer.git
+cd console-inquirer
 
 # 创建并激活虚拟环境
 python -m venv venv
