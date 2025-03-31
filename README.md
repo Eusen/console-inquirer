@@ -109,7 +109,7 @@ description = Text(
 ).prompt()
 ```
 
-### 使用 Inquirer 链式调用
+### 使用 inquirer 链式调用
 
 ```python
 from inquirer_py import inquirer
@@ -179,6 +179,8 @@ except ExitPromptError:
 ### 验证和过滤
 
 ```python
+from inquirer_py import Input
+
 def validate_age(val):
     try:
         age = int(val)
