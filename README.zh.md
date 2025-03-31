@@ -1,18 +1,18 @@
 <div align="center">
   <p>
-    <a href="README.zh.md">中文</a> | 
-    <a href="README.md">English</a>
+    <a href="/">中文</a> | 
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.md">English</a>
   </p>
   
   <h1>🐣inquirer_console</h1>
   <p>优雅的交互式命令行界面工具库</p>
   
   <p>
-    <a href="#-安装"><strong>安装指南</strong></a> •
-    <a href="#-特性"><strong>特性</strong></a> •
-    <a href="#-使用示例"><strong>使用示例</strong></a> •
-    <a href="#-api文档"><strong>API文档</strong></a> •
-    <a href="#-贡献指南"><strong>贡献指南</strong></a>
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.zh.md#-安装"><strong>安装指南</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.zh.md#-特性"><strong>特性</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.zh.md#-使用示例"><strong>使用示例</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.zh.md#-api文档"><strong>API文档</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.zh.md#-贡献指南"><strong>贡献指南</strong></a>
   </p>
   
   <p>
@@ -137,7 +137,7 @@ questions = [
         'default': True
     },
     {
-        'type': 'list',
+        'type': 'select',
         'name': 'favorite_lang',
         'message': '你最喜欢的编程语言是',
         'choices': [
@@ -328,7 +328,7 @@ pytest
 
 ## 📄 许可证
 
-本项目采用 [MIT 许可证](LICENSE) 进行许可。
+本项目采用 [MIT 许可证](https://github.com/Eusen/inquirer_console/blob/master/LICENSE) 进行许可。
 
 ## 💖 支持项目
 

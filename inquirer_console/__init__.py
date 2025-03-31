@@ -18,7 +18,7 @@ answers = Inquirer().prompt([
         'message': '你的名字是?'
     },
     {
-        'type': 'list',
+        'type': 'select',
         'name': 'favorite_lang',
         'message': '你最喜欢的编程语言是?',
         'choices': ['Python', 'JavaScript', 'Rust']

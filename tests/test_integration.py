@@ -35,7 +35,7 @@ class TestInquirerIntegration:
                 'default': True
             },
             {
-                'type': 'list',
+                'type': 'select',
                 'name': 'favorite_lang',
                 'message': '你最喜欢的编程语言是',
                 'choices': [
@@ -83,7 +83,7 @@ class TestInquirerIntegration:
             questions = [
                 {'type': 'input', 'name': 'name', 'message': '姓名'},
                 {'type': 'confirm', 'name': 'confirm', 'message': '确认'},
-                {'type': 'list', 'name': 'list', 'message': '列表', 'choices': ['a', 'b']},
+                {'type': 'select', 'name': 'select', 'message': '列表', 'choices': ['a', 'b']},
                 {'type': 'checkbox', 'name': 'checkbox', 'message': '复选框', 'choices': ['a', 'b']},
                 {'type': 'password', 'name': 'password', 'message': '密码'},
                 {'type': 'text', 'name': 'text', 'message': '文本'}
@@ -93,10 +93,10 @@ class TestInquirerIntegration:
             answers = inquirer.prompt(questions)
             
             # 验证结果包含所有问题的答案
-            assert set(answers.keys()) == {'name', 'confirm', 'list', 'checkbox', 'password', 'text'}
+            assert set(answers.keys()) == {'name', 'confirm', 'select', 'checkbox', 'password', 'text'}
             assert answers['name'] == "测试用户"
             assert answers['confirm'] is True
-            assert answers['list'] == "python"
+            assert answers['select'] == "python"
             assert answers['checkbox'] == ["python", "js"]
             assert answers['password'] == "secure_password"
             assert answers['text'] == "这是一段多行文本\n测试示例"

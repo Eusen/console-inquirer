@@ -1,18 +1,18 @@
 <div align="center">
   <p>
-    <a href="README.zh.md">中文</a> | 
-    <a href="README.md">English</a>
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.zh.md">中文</a> | 
+    <a href="/">English</a>
   </p>
   
   <h1>🐣inquirer_console</h1>
   <p>An elegant interactive command line interface tool library</p>
   
   <p>
-    <a href="#-installation"><strong>Installation</strong></a> •
-    <a href="#-features"><strong>Features</strong></a> •
-    <a href="#-usage-examples"><strong>Usage Examples</strong></a> •
-    <a href="#-api-documentation"><strong>API Docs</strong></a> •
-    <a href="#-contributing"><strong>Contributing</strong></a>
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.md#-installation"><strong>Installation</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.md#-features"><strong>Features</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.md#-usage-examples"><strong>Usage Examples</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.md#-api-documentation"><strong>API Docs</strong></a> •
+    <a href="https://github.com/Eusen/inquirer_console/blob/master/README.md#-contributing"><strong>Contributing</strong></a>
   </p>
   
   <p>
@@ -122,7 +122,7 @@ description = Text(
 ```python
 from inquirer_console import inquirer
 
-# Define a list of questions
+# Define a select of questions
 questions = [
     {
         'type': 'input',
@@ -137,7 +137,7 @@ questions = [
         'default': True
     },
     {
-        'type': 'list',
+        'type': 'select',
         'name': 'favorite_lang',
         'message': 'What is your favorite programming language',
         'choices': [
@@ -328,7 +328,7 @@ pytest
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/Eusen/inquirer_console/blob/master/LICENSE).
 
 ## 💖 Support the Project
 
